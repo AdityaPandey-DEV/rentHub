@@ -12,18 +12,14 @@ export default function Home() {
 
       {/* Features Section - Sharp and Structured */}
       <section className="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-8">
-            <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
-                Structured <br />
-                <span className="text-[var(--text-secondary)]">Management.</span>
-              </h2>
-              <p className="text-sm font-bold uppercase tracking-widest text-[var(--text-secondary)]">
-                The most professional rental ecosystem for modern living.
-              </p>
-            </div>
-            <div className="hidden lg:block w-32 h-[1px] bg-[var(--text-primary)]" />
+          <div className="text-center max-w-4xl mx-auto mb-24">
+            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6 italic">
+              Structured <br />
+              <span className="text-[var(--text-secondary)]">Management.</span>
+            </h2>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)]">
+              THE MOST PROFESSIONAL RENTAL ECOSYSTEM FOR MODERN LIVING.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-0 border border-[var(--border-color)]">
@@ -57,7 +53,6 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
       </section>
 
       {/* Final CTA - High Contrast */}

@@ -53,8 +53,8 @@ export default function Hero() {
           </p>
 
           {/* Search Box - Ultra Solid B&W */}
-          <form onSubmit={handleSearch} className="w-full max-w-5xl mx-auto mb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-            <div className="bg-white border-[4px] border-black p-2 flex flex-col md:flex-row gap-0 shadow-[20px_20px_0px_rgba(0,0,0,0.2)]">
+          <form onSubmit={handleSearch} className="w-full max-w-7xl mx-auto mb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+            <div className="bg-white border-[4px] border-black p-2 flex flex-col md:flex-row gap-0 shadow-[30px_30px_0px_rgba(0,0,0,0.15)]">
               <div className="flex-[2] relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
                 <HiLocationMarker className="absolute left-6 top-1/2 -translate-y-1/2 text-black text-xl" />
                 <input type="text" placeholder="CITY OR LOCALITY"
