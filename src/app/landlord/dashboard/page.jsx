@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/components/providers/AuthProvider';
+import { useAuth } from '@/context/AuthContext';
 import { useApi } from '@/hooks/useApi';
 import toast from 'react-hot-toast';
 import { HiOfficeBuilding, HiKey, HiClipboardCheck, HiCurrencyRupee, HiPlus, HiEye, HiCheck, HiX, HiArrowRight } from 'react-icons/hi';

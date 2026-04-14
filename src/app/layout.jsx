@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 import Navbar from '@/components/layout/Navbar';
 import Providers from '@/components/Providers';
 import './globals.css';

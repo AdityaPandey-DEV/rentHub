@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useAuth } from '@/components/providers/AuthProvider';
+import { useAuth } from '@/context/AuthContext';
 import toast from 'react-hot-toast';
 import { HiUser, HiMail, HiLockClosed, HiPhone, HiArrowRight, HiHome } from 'react-icons/hi';
 

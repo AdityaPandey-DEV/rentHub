@@ -2,7 +2,7 @@
 import { useState, useEffect, use } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/components/providers/AuthProvider';
+import { useAuth } from '@/context/AuthContext';
 import { useApi } from '@/hooks/useApi';
 import toast from 'react-hot-toast';
 import { HiLocationMarker, HiArrowLeft, HiPhone, HiMail, HiCalendar, HiCurrencyRupee } from 'react-icons/hi';
