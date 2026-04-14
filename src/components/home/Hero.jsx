@@ -56,10 +56,10 @@ export default function Hero() {
           <form onSubmit={handleSearch} className="w-full max-w-7xl mx-auto mb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
             <div className="bg-white border-[4px] border-black p-2 flex flex-col md:flex-row gap-0 shadow-[30px_30px_0px_rgba(0,0,0,0.15)]">
               <div className="flex-[2] relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
-                <HiLocationMarker className="absolute left-6 top-1/2 -translate-y-1/2 text-black text-xl" />
+                <HiLocationMarker className="absolute left-8 top-1/2 -translate-y-1/2 text-black text-xl" />
                 <input type="text" placeholder="CITY OR LOCALITY"
                   value={city} onChange={(e) => setCity(e.target.value)}
-                  className="w-full h-20 pl-20 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-sm tracking-[0.2em]" />
+                  className="w-full h-20 pl-24 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-sm tracking-[0.2em]" />
               </div>
               <div className="flex-1 relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
                 <select value={roomType} onChange={(e) => setRoomType(e.target.value)}
