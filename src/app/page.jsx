@@ -27,33 +27,33 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-0 border border-[var(--border-color)]">
-            <div className="p-12 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
-              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
+            <div className="p-10 md:p-16 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-10 transition-colors">
                 <HiShieldCheck size={32} />
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Secure</h3>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
-                Integrated payment orchestration with strict rental history tracking and encryption.
+              <h3 className="text-3xl font-black uppercase tracking-tight mb-6 group-hover:text-[var(--bg-primary)]">Secure</h3>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed max-w-[280px]">
+                Integrated payment orchestration with strict rental history tracking and encryption for total asset protection.
               </p>
             </div>
 
-            <div className="p-12 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
-              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
+            <div className="p-10 md:p-16 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-10 transition-colors">
                 <HiHome size={32} />
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Verified</h3>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
-                Every property and room listed undergoes a manual verification process for absolute peace of mind.
+              <h3 className="text-3xl font-black uppercase tracking-tight mb-6 group-hover:text-[var(--bg-primary)]">Verified</h3>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed max-w-[280px]">
+                Every property and room listed undergoes a manual verification process for absolute peace of mind and quality assurance.
               </p>
             </div>
 
-            <div className="p-12 group hover:bg-[var(--text-primary)] transition-colors">
-              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
+            <div className="p-10 md:p-16 group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-10 transition-colors">
                 <HiLightningBolt size={32} />
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Instant</h3>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
-                Direct communication between owners and renters through our built-in real-time messaging system.
+              <h3 className="text-3xl font-black uppercase tracking-tight mb-6 group-hover:text-[var(--bg-primary)]">Instant</h3>
+              <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed max-w-[280px]">
+                Direct communication between owners and renters through our built-in real-time messaging system for rapid leasing.
               </p>
             </div>
           </div>

@@ -51,25 +51,25 @@ export default function Hero() {
           </p>
 
           {/* Search Box - Professional B&W */}
-          <form onSubmit={handleSearch} className="w-full max-w-4xl mx-auto mb-20 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-            <div className="bg-[var(--bg-primary)] border-2 border-[var(--text-primary)] p-2">
-              <div className="flex flex-col md:flex-row gap-2">
+          <form onSubmit={handleSearch} className="w-full max-w-5xl mx-auto mb-20 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+            <div className="bg-[var(--bg-primary)] border-[3px] border-[var(--text-primary)] p-3">
+              <div className="flex flex-col md:flex-row gap-3">
                 <div className="flex-[2] relative">
-                  <HiLocationMarker className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-primary)] text-xl" />
+                  <HiLocationMarker className="absolute left-6 top-1/2 -translate-y-1/2 text-[var(--text-primary)] text-xl" />
                   <input type="text" placeholder="CITY OR LOCALITY"
                     value={city} onChange={(e) => setCity(e.target.value)}
-                    className="w-full h-16 pl-12 pr-4 bg-transparent border-none text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none font-black uppercase text-xs tracking-widest" />
+                    className="w-full h-16 pl-14 pr-4 bg-transparent border-none text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
                 </div>
-                <div className="hidden md:block w-px bg-[var(--border-color)] my-2" />
+                <div className="hidden md:block w-[2px] bg-[var(--border-color)] my-3" />
                 <select value={roomType} onChange={(e) => setRoomType(e.target.value)}
-                  className="flex-1 h-16 px-4 bg-transparent text-[var(--text-primary)] focus:outline-none cursor-pointer font-black uppercase text-xs tracking-widest decoration-none">
+                  className="flex-1 h-16 px-6 bg-transparent text-[var(--text-primary)] focus:outline-none cursor-pointer font-black uppercase text-xs tracking-[0.2em] appearance-none">
                   <option value="" className="bg-[var(--bg-primary)]">ROOM TYPE</option>
                   <option value="single" className="bg-[var(--bg-primary)]">SINGLE</option>
                   <option value="double" className="bg-[var(--bg-primary)]">DOUBLE</option>
                   <option value="triple" className="bg-[var(--bg-primary)]">TRIPLE</option>
                 </select>
-                <button type="submit" className="h-16 px-12 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-2 hover:bg-transparent hover:text-[var(--text-primary)] border border-transparent hover:border-[var(--text-primary)] transition-all">
-                  <HiSearch className="text-lg" />
+                <button type="submit" className="h-16 px-16 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black uppercase text-xs tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-transparent hover:text-[var(--text-primary)] border-2 border-transparent hover:border-[var(--text-primary)] transition-all duration-300">
+                  <HiSearch className="text-xl" />
                   Search
                 </button>
               </div>
@@ -79,9 +79,9 @@ export default function Hero() {
           {/* Stats - Sharp and Defined */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 w-full animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
             {stats.map((stat, i) => (
-              <div key={i} className="border border-[var(--border-color)] p-8 hover:bg-[var(--text-primary)] group transition-colors">
-                <p className="text-4xl md:text-5xl font-black text-[var(--text-primary)] group-hover:text-[var(--bg-primary)] mb-2">{stat.value}</p>
-                <p className="text-xs font-black uppercase tracking-[0.2em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]">{stat.label}</p>
+              <div key={i} className="border border-[var(--border-color)] p-10 md:p-14 hover:bg-[var(--text-primary)] group transition-all duration-300 cursor-default">
+                <p className="text-5xl md:text-6xl font-black text-[var(--text-primary)] group-hover:text-[var(--bg-primary)] mb-3 tracking-tighter">{stat.value}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)] opacity-70 group-hover:opacity-100">{stat.label}</p>
               </div>
             ))}
           </div>
