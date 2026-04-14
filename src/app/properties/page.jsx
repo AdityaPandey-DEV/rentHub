@@ -49,7 +49,7 @@ export default function PropertiesPage() {
             <div className="flex-[2] relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
               <HiSearch className="absolute left-6 top-1/2 -translate-y-1/2 text-black text-xl" />
               <input type="text" placeholder="SEARCH BY CITY..." value={city} onChange={(e) => setCity(e.target.value)} 
-                className="w-full h-16 pl-16 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
+                className="w-full h-16 pl-20 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
             </div>
             <div className="flex-1 relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
               <select value={propertyType} onChange={(e) => setPropertyType(e.target.value)} 

@@ -59,7 +59,7 @@ function RoomsContent() {
             <div className="relative md:col-span-1 border-b md:border-b-0 md:border-r-[2px] border-black/10">
               <HiSearch className="absolute left-6 top-1/2 -translate-y-1/2 text-black text-xl" />
               <input type="text" placeholder="CITY..." value={filters.city} onChange={(e) => setFilters({...filters, city: e.target.value})} 
-                className="w-full h-16 pl-16 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
+                className="w-full h-16 pl-20 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
             </div>
             <div className="relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
               <select value={filters.roomType} onChange={(e) => setFilters({...filters, roomType: e.target.value})} 
