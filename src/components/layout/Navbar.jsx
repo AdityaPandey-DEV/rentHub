@@ -33,48 +33,48 @@ const Navbar = () => {
 
   return (
     <nav 
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-2 shadow-lg' : 'bg-transparent py-4'
+      className={`sticky top-0 z-50 transition-all duration-300 border-b border-[var(--border-color)] ${
+        scrolled ? 'bg-[var(--bg-glass)] backdrop-blur-md' : 'bg-[var(--bg-primary)]'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-[var(--accent-primary)] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <HiHome className="text-white text-xl" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 border-2 border-[var(--text-primary)] bg-[var(--text-primary)] flex items-center justify-center transition-transform duration-300">
+              <HiHome className="text-[var(--bg-primary)] text-2xl" />
             </div>
-            <span className="text-2xl font-bold gradient-text tracking-tight">RentHub</span>
+            <span className="text-2xl font-black tracking-tighter text-[var(--text-primary)] uppercase">RENTHUB</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             <Link
               href="/"
-              className={`text-sm font-semibold transition-all duration-200 border-b-2 ${
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all duration-200 border-b-2 ${
                 isActive('/') 
-                ? 'text-[var(--accent-primary)] border-[var(--accent-primary)]' 
-                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)] hover:translate-y-[-1px]'
+                ? 'text-[var(--text-primary)] border-[var(--text-primary)]' 
+                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)]'
               }`}
             >
               Home
             </Link>
             <Link
               href="/properties"
-              className={`text-sm font-semibold transition-all duration-200 border-b-2 ${
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all duration-200 border-b-2 ${
                 isActive('/properties') 
-                ? 'text-[var(--accent-primary)] border-[var(--accent-primary)]' 
-                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)] hover:translate-y-[-1px]'
+                ? 'text-[var(--text-primary)] border-[var(--text-primary)]' 
+                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)]'
               }`}
             >
               Properties
             </Link>
             <Link
               href="/rooms"
-              className={`text-sm font-semibold transition-all duration-200 border-b-2 ${
+              className={`text-xs font-black uppercase tracking-[0.2em] transition-all duration-200 border-b-2 ${
                 isActive('/rooms') 
-                ? 'text-[var(--accent-primary)] border-[var(--accent-primary)]' 
-                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)] hover:translate-y-[-1px]'
+                ? 'text-[var(--text-primary)] border-[var(--text-primary)]' 
+                : 'text-[var(--text-secondary)] border-transparent hover:text-[var(--text-primary)]'
               }`}
             >
               Find Rooms
@@ -85,22 +85,22 @@ const Navbar = () => {
             {isAuthenticated ? (
               <Link
                 href="/dashboard"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] hover:bg-[var(--accent-primary)]/20 transition-all duration-300 font-bold"
+                className="flex items-center gap-2 px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
               >
                 <HiViewGrid />
                 <span>Dashboard</span>
               </Link>
             ) : (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-6">
                 <Link 
                   href="/login" 
-                  className="text-sm font-bold text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors px-4 py-2"
+                  className="text-xs font-black uppercase tracking-[0.2em] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
                 >
                   Login
                 </Link>
                 <Link 
                   href="/register" 
-                  className="btn btn-primary text-sm px-6 shadow-[0_8px_20px_rgba(79,70,229,0.3)]"
+                  className="px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
                 >
                   Join Now
                 </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-xl bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] transition-colors text-[var(--text-primary)]"
+            className="md:hidden p-3 border border-[var(--border-color)] hover:bg-[var(--bg-secondary)] transition-colors text-[var(--text-primary)]"
           >
             {isOpen ? <HiX className="text-2xl" /> : <HiOutlineMenu className="text-2xl" />}
           </button>
@@ -120,17 +120,17 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         <div 
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-96 opacity-100 py-6 border-t border-[var(--border-color)] mt-2' : 'max-h-0 opacity-0'
+            isOpen ? 'max-h-96 opacity-100 py-6 border-t border-[var(--border-color)] mt-0' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-col gap-4">
-            <Link href="/" className="px-4 py-2 rounded-lg hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-medium" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="/properties" className="px-4 py-2 rounded-lg hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-medium" onClick={() => setIsOpen(false)}>Properties</Link>
-            <Link href="/rooms" className="px-4 py-2 rounded-lg hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-medium" onClick={() => setIsOpen(false)}>Find Rooms</Link>
+          <div className="flex flex-col gap-6">
+            <Link href="/" className="text-xs font-black uppercase tracking-widest text-[var(--text-primary)]" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/properties" className="text-xs font-black uppercase tracking-widest text-[var(--text-primary)]" onClick={() => setIsOpen(false)}>Properties</Link>
+            <Link href="/rooms" className="text-xs font-black uppercase tracking-widest text-[var(--text-primary)]" onClick={() => setIsOpen(false)}>Find Rooms</Link>
             {!isAuthenticated && (
-              <div className="flex flex-col gap-3 pt-4 border-t border-[var(--border-color)]">
-                <Link href="/login" className="px-4 py-2 text-center text-[var(--text-primary)] font-medium" onClick={() => setIsOpen(false)}>Login</Link>
-                <Link href="/register" className="btn btn-primary w-full" onClick={() => setIsOpen(false)}>Sign Up</Link>
+              <div className="flex flex-col gap-4 pt-6 border-t border-[var(--border-color)]">
+                <Link href="/login" className="text-xs font-black uppercase tracking-widest text-[var(--text-primary)]" onClick={() => setIsOpen(false)}>Login</Link>
+                <Link href="/register" className="px-6 py-3 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] text-center font-black uppercase text-xs tracking-widest" onClick={() => setIsOpen(false)}>Sign Up</Link>
               </div>
             )}
           </div>

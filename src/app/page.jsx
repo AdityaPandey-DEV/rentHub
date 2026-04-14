@@ -1,117 +1,85 @@
 import Link from 'next/link';
-import { HiArrowRight, HiShieldCheck, HiStar, HiHome, HiLightningBolt } from 'react-icons/hi';
+import { HiArrowRight, HiShieldCheck, HiHome, HiLightningBolt } from 'react-icons/hi';
+import Hero from '@/components/home/Hero';
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden section-padding min-h-[90vh] flex items-center">
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center animate-fadeInUp">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--accent-primary)]/10 text-[var(--accent-primary)] font-bold text-sm mb-8 border border-[var(--accent-primary)]/20 shadow-glow">
-              <HiStar className="animate-pulse" />
-              <span>Next Generation Rental Management</span>
-            </div>
-            
-            <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tight">
-              Rent Smart, <br />
-              <span className="gradient-text">Live Better.</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto leading-relaxed">
-              RentHub simplifies the property management journey for both landlords and tenants. 
-              Secure, transparent, and beautiful.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/properties" className="btn btn-primary px-10 py-5 text-lg w-full sm:w-auto flex items-center gap-3">
-                Explore Properties
-                <HiArrowRight />
-              </Link>
-              <Link href="/register" className="btn btn-secondary px-10 py-5 text-lg w-full sm:w-auto">
-                List Your Property
-              </Link>
-            </div>
-
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
-              {[
-                { label: 'Active Rentals', value: '1,200+' },
-                { label: 'Verified Owners', value: '450+' },
-                { label: 'Happy Tenants', value: '3,000+' },
-                { label: 'Cities Covered', value: '50+' }
-              ].map((stat, i) => (
-                <div key={i} className="animate-fadeIn" style={{ animationDelay: `${i * 0.1}s` }}>
-                  <p className="text-3xl font-black text-[var(--text-primary)] mb-1">{stat.value}</p>
-                  <p className="text-sm text-[var(--text-muted)] font-medium uppercase tracking-widest">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        {/* Background Decorations */}
-        <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[var(--accent-primary)] opacity-10 blur-[120px] rounded-full animate-float"></div>
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-[var(--accent-secondary)] opacity-10 blur-[150px] rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+    <div className="flex flex-col bg-[var(--bg-primary)]">
+      {/* Hero Section Container */}
+      <section className="border-b border-[var(--border-color)]">
+        <Hero />
       </section>
 
-      {/* Features Section */}
-      <section className="section-padding bg-[var(--bg-secondary)]/50 border-y border-[var(--border-color)]">
+      {/* Features Section - Sharp and Structured */}
+      <section className="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-color)]">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-black mb-4">Why Choose <span className="text-[var(--accent-primary)]">RentHub</span>?</h2>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              We leverage modern technology to make renting seamless and secure for everyone involved.
-            </p>
+          <div className="flex flex-col md:flex-row items-center justify-between mb-20 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">
+                Structured <br />
+                <span className="text-[var(--text-secondary)]">Management.</span>
+              </h2>
+              <p className="text-sm font-bold uppercase tracking-widest text-[var(--text-secondary)]">
+                The most professional rental ecosystem for modern living.
+              </p>
+            </div>
+            <div className="hidden lg:block w-32 h-[1px] bg-[var(--text-primary)]" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card p-8 group">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--accent-primary)]/10 flex items-center justify-center text-[var(--accent-primary)] mb-6 group-hover:scale-110 transition-transform">
+          <div className="grid md:grid-cols-3 gap-0 border border-[var(--border-color)]">
+            <div className="p-12 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
                 <HiShieldCheck size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Secure Payments</h3>
-              <p className="text-[var(--text-secondary)]">Integrated payment orchestration with automatic receipts and rental history tracking.</p>
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Secure</h3>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
+                Integrated payment orchestration with strict rental history tracking and encryption.
+              </p>
             </div>
 
-            <div className="card p-8 group">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--accent-success)]/10 flex items-center justify-center text-[var(--accent-success)] mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-12 border-b md:border-b-0 md:border-r border-[var(--border-color)] group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
                 <HiHome size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Verified Listings</h3>
-              <p className="text-[var(--text-secondary)]">Every property and room listed undergoes a rigorous verification process for your peace of mind.</p>
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Verified</h3>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
+                Every property and room listed undergoes a manual verification process for absolute peace of mind.
+              </p>
             </div>
 
-            <div className="card p-8 group">
-              <div className="w-14 h-14 rounded-2xl bg-[var(--accent-warning)]/10 flex items-center justify-center text-[var(--accent-warning)] mb-6 group-hover:scale-110 transition-transform">
+            <div className="p-12 group hover:bg-[var(--text-primary)] transition-colors">
+              <div className="w-16 h-16 border-2 border-[var(--text-primary)] flex items-center justify-center text-[var(--text-primary)] group-hover:bg-[var(--bg-primary)] group-hover:border-[var(--bg-primary)] group-hover:text-[var(--text-primary)] mb-8 transition-colors">
                 <HiLightningBolt size={32} />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Instant Chat</h3>
-              <p className="text-[var(--text-secondary)]">Direct communication between owners and renters through our built-in real-time messaging system.</p>
+              <h3 className="text-2xl font-black uppercase tracking-tight mb-4 group-hover:text-[var(--bg-primary)]">Instant</h3>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)]/80 leading-relaxed">
+                Direct communication between owners and renters through our built-in real-time messaging system.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section-padding relative">
+      {/* Final CTA - High Contrast */}
+      <section className="py-24 relative overflow-hidden bg-[var(--bg-primary)]">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="glass p-12 md:p-20 rounded-[var(--radius-xl)] text-center overflow-hidden relative">
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to find your <span className="gradient-text">dream space</span>?</h2>
-              <p className="text-xl text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">
-                Join thousands of happy users and experience the future of rental management today.
-              </p>
-              <Link href="/register" className="btn btn-primary px-12 py-5 text-lg shadow-glow">
-                Get Started for Free
-              </Link>
-            </div>
-            
-            {/* Visual fluff */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-[0.03] rounded-full -translate-y-1/2 translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--accent-primary)] opacity-[0.05] rounded-full translate-y-1/2 -translate-x-1/2"></div>
+          <div className="border-[4px] border-[var(--text-primary)] p-12 md:p-24 text-center relative z-10">
+            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 italic">
+              Ready to find <br />
+              your next space?
+            </h2>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto">
+              JOIN THOUSANDS OF PROFESSIONALS ALREADY USING RENTHUB.
+            </p>
+            <Link href="/register" className="inline-block px-12 py-4 border-2 border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] font-black uppercase tracking-[0.2em] hover:bg-transparent hover:text-[var(--text-primary)] transition-all">
+              Join Now
+            </Link>
           </div>
         </div>
+
+        {/* Decorative elements - Monochrome */}
+        <div className="absolute top-0 right-0 w-1/3 h-full border-l border-[var(--border-color)] opacity-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-1/3 h-full border-r border-[var(--border-color)] opacity-10 pointer-events-none" />
       </section>
     </div>
   );
