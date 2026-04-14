@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import User from '@/lib/models/User';
 import connectDB from '@/lib/db';
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback_for_build_purposes_only';
 const JWT_EXPIRE = process.env.JWT_EXPIRE || '30d';
 
 export function signToken(payload) {
