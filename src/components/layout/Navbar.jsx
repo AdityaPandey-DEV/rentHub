@@ -9,11 +9,15 @@ import {
   HiX, 
   HiLogin, 
   HiUserAdd, 
-  HiViewGrid 
+  HiViewGrid,
+  HiSun,
+  HiMoon
 } from 'react-icons/hi';
+import { useTheme } from '@/context/ThemeContext';
 
 const Navbar = () => {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -82,45 +86,66 @@ const Navbar = () => {
 
             <div className="h-6 w-[1px] bg-[var(--border-color)] mx-2"></div>
 
-            {isAuthenticated ? (
-              <Link
-                href="/dashboard"
-                className="flex items-center gap-2 px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
+            <div className="flex items-center gap-6">
+              {/* Theme Toggle */}
+              <button 
+                onClick={toggleTheme}
+                className="p-2 border border-[var(--border-color)] hover:bg-[var(--text-primary)] hover:text-[var(--bg-primary)] transition-all duration-300 group"
+                aria-label="Toggle theme"
               >
-                <HiViewGrid />
-                <span>Dashboard</span>
-              </Link>
-            ) : (
-              <div className="flex items-center gap-6">
-                <Link 
-                  href="/login" 
-                  className="text-xs font-black uppercase tracking-[0.2em] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                {theme === 'dark' ? <HiSun className="text-xl" /> : <HiMoon className="text-xl" />}
+              </button>
+
+              {isAuthenticated ? (
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-2 px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
                 >
-                  Login
+                  <HiViewGrid />
+                  <span>Dashboard</span>
                 </Link>
-                <Link 
-                  href="/register" 
-                  className="px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
-                >
-                  Join Now
-                </Link>
-              </div>
-            )}
+              ) : (
+                <div className="flex items-center gap-6">
+                  <Link 
+                    href="/login" 
+                    className="text-xs font-black uppercase tracking-[0.2em] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    Login
+                  </Link>
+                  <Link 
+                    href="/register" 
+                    className="px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] hover:bg-transparent hover:text-[var(--text-primary)] transition-all duration-300 font-black uppercase text-xs tracking-widest"
+                  >
+                    Join Now
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-3 border border-[var(--border-color)] hover:bg-[var(--bg-secondary)] transition-colors text-[var(--text-primary)]"
-          >
-            {isOpen ? <HiX className="text-2xl" /> : <HiOutlineMenu className="text-2xl" />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            {/* Mobile Theme Toggle */}
+            <button 
+              onClick={toggleTheme}
+              className="p-2.5 border border-[var(--border-color)] hover:bg-[var(--bg-secondary)] transition-colors text-[var(--text-primary)]"
+            >
+              {theme === 'dark' ? <HiSun className="text-xl" /> : <HiMoon className="text-xl" />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-3 border border-[var(--border-color)] hover:bg-[var(--bg-secondary)] transition-colors text-[var(--text-primary)]"
+            >
+              {isOpen ? <HiX className="text-2xl" /> : <HiOutlineMenu className="text-2xl" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
         <div 
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isOpen ? 'max-h-96 opacity-100 py-6 border-t border-[var(--border-color)] mt-0' : 'max-h-0 opacity-0'
+            isOpen ? 'max-h-[500px] opacity-100 py-6 border-t border-[var(--border-color)] mt-0' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="flex flex-col gap-6">

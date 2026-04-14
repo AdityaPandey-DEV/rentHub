@@ -26,62 +26,63 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden border-b border-[var(--border-color)]">
-      {/* Background with B&W focus */}
+      {/* Background with stronger B&W focus */}
       <div className="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" alt="Modern home" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[var(--bg-primary)] opacity-70" />
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/60 z-[1]" />
+        <div className="absolute inset-0 bg-[var(--bg-primary)] opacity-40 z-[2]" />
       </div>
 
-      <div className="container mx-auto px-4 z-10 relative py-20">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 z-10 relative py-24">
+        <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-6 py-2 border border-[var(--text-primary)] bg-[var(--text-primary)] text-[var(--bg-primary)] text-xs font-black uppercase tracking-[0.2em] mb-10 animate-fadeInUp">
+          <div className="inline-flex items-center gap-2 px-6 py-2 border border-white bg-white text-black text-[10px] font-black uppercase tracking-[0.3em] mb-12 animate-fadeInUp shadow-2xl">
             <HiArrowRight className="text-xs" />
             Over 10,000+ verified properties
           </div>
 
-          {/* Title */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.9] text-[var(--text-primary)] tracking-tighter uppercase animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
+          {/* Title - Optimized for huge impact */}
+          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black mb-10 leading-[0.8] text-white tracking-tighter uppercase animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
             Find Your <br />
-            <span className="text-outline-white">Next Space.</span>
+            <span className="text-transparent" style={{ webkitTextStroke: '2px white' }}>Next Space.</span>
           </h1>
 
-          <p className="text-sm md:text-base text-[var(--text-secondary)] mb-12 max-w-xl mx-auto font-bold uppercase tracking-widest leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
-            Discover verified properties and connect with trusted landlords on the most professional rental platform.
+          <p className="text-xs md:text-sm text-white/80 mb-16 max-w-2xl mx-auto font-bold uppercase tracking-[0.4em] lg:tracking-[0.6em] leading-relaxed animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+            The most professional rental ecosystem for global space management.
           </p>
 
-          {/* Search Box - Professional B&W */}
-          <form onSubmit={handleSearch} className="w-full max-w-5xl mx-auto mb-20 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
-            <div className="bg-[var(--bg-primary)] border-[3px] border-[var(--text-primary)] p-3">
-              <div className="flex flex-col md:flex-row gap-3">
-                <div className="flex-[2] relative">
-                  <HiLocationMarker className="absolute left-6 top-1/2 -translate-y-1/2 text-[var(--text-primary)] text-xl" />
-                  <input type="text" placeholder="CITY OR LOCALITY"
-                    value={city} onChange={(e) => setCity(e.target.value)}
-                    className="w-full h-16 pl-14 pr-4 bg-transparent border-none text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none font-black uppercase text-xs tracking-[0.2em]" />
-                </div>
-                <div className="hidden md:block w-[2px] bg-[var(--border-color)] my-3" />
-                <select value={roomType} onChange={(e) => setRoomType(e.target.value)}
-                  className="flex-1 h-16 px-6 bg-transparent text-[var(--text-primary)] focus:outline-none cursor-pointer font-black uppercase text-xs tracking-[0.2em] appearance-none">
-                  <option value="" className="bg-[var(--bg-primary)]">ROOM TYPE</option>
-                  <option value="single" className="bg-[var(--bg-primary)]">SINGLE</option>
-                  <option value="double" className="bg-[var(--bg-primary)]">DOUBLE</option>
-                  <option value="triple" className="bg-[var(--bg-primary)]">TRIPLE</option>
-                </select>
-                <button type="submit" className="h-16 px-16 bg-[var(--text-primary)] text-[var(--bg-primary)] font-black uppercase text-xs tracking-[0.3em] flex items-center justify-center gap-3 hover:bg-transparent hover:text-[var(--text-primary)] border-2 border-transparent hover:border-[var(--text-primary)] transition-all duration-300">
-                  <HiSearch className="text-xl" />
-                  Search
-                </button>
+          {/* Search Box - Ultra Solid B&W */}
+          <form onSubmit={handleSearch} className="w-full max-w-5xl mx-auto mb-24 animate-fadeInUp" style={{ animationDelay: '0.3s' }}>
+            <div className="bg-white border-[4px] border-black p-2 flex flex-col md:flex-row gap-0 shadow-[20px_20px_0px_rgba(0,0,0,0.2)]">
+              <div className="flex-[2] relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
+                <HiLocationMarker className="absolute left-6 top-1/2 -translate-y-1/2 text-black text-xl" />
+                <input type="text" placeholder="CITY OR LOCALITY"
+                  value={city} onChange={(e) => setCity(e.target.value)}
+                  className="w-full h-20 pl-16 pr-6 bg-transparent border-none text-black placeholder-black/40 focus:outline-none font-black uppercase text-sm tracking-[0.2em]" />
               </div>
+              <div className="flex-1 relative border-b md:border-b-0 md:border-r-[2px] border-black/10">
+                <select value={roomType} onChange={(e) => setRoomType(e.target.value)}
+                  className="w-full h-20 px-8 bg-transparent text-black focus:outline-none cursor-pointer font-black uppercase text-sm tracking-[0.2em] appearance-none">
+                  <option value="">ROOM TYPE</option>
+                  <option value="single">SINGLE</option>
+                  <option value="double">DOUBLE</option>
+                  <option value="triple">TRIPLE</option>
+                </select>
+              </div>
+              <button type="submit" className="h-20 px-12 bg-black text-white font-black uppercase text-sm tracking-[0.3em] flex items-center justify-center gap-4 hover:bg-white hover:text-black transition-all duration-300 group min-w-[200px]">
+                <HiSearch className="text-2xl group-hover:scale-125 transition-transform" />
+                Search
+              </button>
             </div>
           </form>
 
-          {/* Stats - Sharp and Defined */}
+          {/* Stats - Massive and Bold */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-0 w-full animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
             {stats.map((stat, i) => (
-              <div key={i} className="border border-[var(--border-color)] p-10 md:p-14 hover:bg-[var(--text-primary)] group transition-all duration-300 cursor-default">
-                <p className="text-5xl md:text-6xl font-black text-[var(--text-primary)] group-hover:text-[var(--bg-primary)] mb-3 tracking-tighter">{stat.value}</p>
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[var(--text-secondary)] group-hover:text-[var(--bg-primary)] opacity-70 group-hover:opacity-100">{stat.label}</p>
+              <div key={i} className="border border-white/20 p-12 md:p-16 hover:bg-white group transition-all duration-500 cursor-default backdrop-blur-sm bg-black/20">
+                <p className="text-5xl md:text-7xl font-black text-white group-hover:text-black mb-4 tracking-tighter">{stat.value}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-white/60 group-hover:text-black">{stat.label}</p>
               </div>
             ))}
           </div>
